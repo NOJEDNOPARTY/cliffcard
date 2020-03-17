@@ -1,6 +1,7 @@
 var common = {
 	init: function() {
 		common.main();
+		common.sidebar();
 		common.owl();
 	},
 	main: function(){
@@ -43,6 +44,27 @@ var common = {
 		})
 		
 		
+	},
+	sidebar: function(){
+		var headerHeight = $('header').outerHeight();
+		var footerHeight = $('footer').outerHeight();
+		$( window ).scroll(function() {
+			var pos = $(window).scrollTop();
+			var docHeight = $(document).height();
+			var footerPos = docHeight - pos - ($(window).height() - footerHeight );
+			if(pos > headerHeight ){
+				$(".news-list, .left-sidebar").addClass('active');
+			}else {
+				$(".news-list, .left-sidebar").removeClass('active');
+			}
+			if(footerHeight * 2 > footerPos) {
+				$(".left-sidebar").css("top", (0 - ((footerHeight * 2) - footerPos)));
+				$(".news-list").css("top", (0 - ((footerHeight * 2) - footerPos)));
+			}else {
+				$(".left-sidebar").css("top", 0);
+				$(".news-list").css("top", 0);
+			}
+		});
 	},
 	owl: function(){
 		$('.banner-carousel').owlCarousel({
