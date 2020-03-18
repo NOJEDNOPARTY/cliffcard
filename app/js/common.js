@@ -69,6 +69,10 @@ var common = {
 				$('#thanksPopup').addClass('active')
 			}
 		})
+		$('.btn-exercise').click(function(event){
+			event.preventDefault();
+			$('#exercisePopup').addClass('active')
+		})
 
 		$('.popup-close').click(function(event){
 			event.preventDefault();
