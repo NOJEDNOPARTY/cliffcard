@@ -53,7 +53,7 @@ var common = {
 			$(this).toggleClass('open');
 		})
 
-		$('input.btn[type="submit"').click(function(event){
+		$('input.btn:not(.change-pass-info)[type="submit"').click(function(event){
 			event.preventDefault();
 			var formItem = $(this).closest('form').find('.form-item')
 			$( formItem ).each(function( index ) {
@@ -69,9 +69,39 @@ var common = {
 				$('#thanksPopup').addClass('active')
 			}
 		})
+		$('.change-pass-info').click(function(event){
+			event.preventDefault();
+			var formItem = $(this).closest('form').find('.form-item')
+			$( formItem ).each(function( index ) {
+				var item = $(this);
+				if(item.val() == '') {
+					item.addClass('error')
+					setTimeout(function(){
+						item.removeClass('error')
+					}, 4000)
+				}
+			});
+			if(formItem.val() != '') {
+				$('.popup-wrapper').removeClass('active');
+				$('#changePassInfoPopup').addClass('active')
+			}
+		})
+
 		$('.btn-exercise').click(function(event){
 			event.preventDefault();
+			$('.popup-wrapper').removeClass('active');
 			$('#exercisePopup').addClass('active')
+		})
+
+		$('.login-trigger').click(function(event){
+			event.preventDefault();
+			$('.popup-wrapper').removeClass('active');
+			$('#loginPopup').addClass('active')
+		})
+		$('.change-password-trigger').click(function(event){
+			event.preventDefault();
+			$('.popup-wrapper').removeClass('active');
+			$('#changePassPopup').addClass('active')
 		})
 
 		$('.popup-close').click(function(event){

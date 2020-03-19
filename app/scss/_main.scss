@@ -601,6 +601,62 @@ h2 span {
 	border-radius: 50px;
 }
 
+.login-popup .popup {
+	max-width: 527px;
+	padding: 55px 40px 49px;
+}
+
+.login-popup .popup .form-item {
+	width: 100%;
+    max-width: 100%;
+	margin: 0 0 28px;
+	padding-bottom: 6px;
+	font-size: 17px;
+	line-height: 17px;
+}
+
+.pass-popup .popup {padding: 55px 40px 40px;}
+
+.pass-popup .popup .form-item  {margin: 0 0 57px;}
+
+.login-popup .popup .btn {
+	max-width: 204px;
+	height: 54px;
+	font-size: 17px;
+	line-height: 17px;
+}
+
+.no-margin {margin: 0 !important;}
+
+.login-popup-links {
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 15px 0 20px;
+	& a,
+	& span {
+		font-family: 'Open Sans Regular';
+		font-size: 13px;
+		line-height: 13px;
+		letter-spacing: -0.5px;
+		color: #263e88;
+		transition: 0.3s ease;
+	}
+	& a:hover {color: #b71c1c;}
+	& span {margin: 0 6px;}
+}
+
+.pass-popup p {
+	width: 100%;
+	margin: 26px 0 67px;
+	font-family: 'Open Sans Regular';
+	font-size: 18px;
+	line-height: 26px;
+	text-align: center;
+	color: #ffffff;
+}
+
+
 #thanksPopup.popup {padding: 118px 0;}
 
 .popup-title {
@@ -617,6 +673,15 @@ h2 span {
     font-size: 48px;
     line-height: 48px;
     text-align: left;
+}
+.popup-title-small {
+	width: 100%;
+    margin-bottom: 47px;
+	font-family: 'Open Sans Bold';
+	font-size: 32px;
+	line-height: 32px;
+	text-align: center;
+	color: #ffffff;
 }
 .popup-text-m,
 .popup-text-s {
