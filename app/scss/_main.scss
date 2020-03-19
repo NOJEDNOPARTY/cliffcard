@@ -1,6 +1,7 @@
 @import "./libs/normilize/normilize.css";
 @import "./fonts.css";
 @import "./libs/owl/owl.carousel.min.css";
+@import "./libs/jquery-ui/jquery-ui.css";
 @import "./libs/owl/owl.theme.default.min.css";
 
 body {background: #111111;}
@@ -1353,6 +1354,10 @@ footer .text-info a:hover {color: #b71c1c;}
 
 .section-cnt .catalog-country {padding-bottom: 47px;}
 
+.info-section {
+	max-width: 1740px;
+	padding-bottom: 106px;
+}
 .section-title {
 	margin-bottom: 9px;
     font-family: 'Open Sans Bold';
@@ -1497,6 +1502,107 @@ footer .text-info a:hover {color: #b71c1c;}
 }
 
 
+.paragraph-text {
+	font-family: 'Open Sans Regular';
+	font-size: 24px;
+	line-height: 42px;
+	color: #ffffff;
+	&-m {
+		font-size: 21px;
+		line-height: 32px;
+		max-width: 1154px;
+	}
+	&:not(:last-child) {margin-bottom: 32px;}
+	&:last-child {margin-bottom: 50px;}
+}
+
+.info-section .section-title {margin-bottom: 53px;}
+.form-title-m {margin-bottom: 41px;}
+.form-section {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-flow: row wrap;
+	width: 100%;
+	&-item {
+		width: 100%;
+		max-width: 49%;
+		margin-bottom: 43px;
+		& .form-item {
+			margin-bottom: 0;
+			width: 100%;
+			max-width: 100%;
+		}
+		&.form-section-item-price {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			& > div {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			& p {
+				font-family: 'Open Sans Regular';
+				font-size: 21px;
+				line-height: 21px;
+				color: #acacac;
+			}
+			& input {max-width: 116px;}
+		}
+		&.form-section-item-comment {
+			max-width: 100%;
+			margin-bottom: 52px;
+			.textarea-field {
+				height: 140px;
+				margin-bottom: 0;
+				font-size: 21px;
+				line-height: 34px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(min-width: 993px) {
 	footer .text-info br {display: none;}
@@ -1516,6 +1622,15 @@ footer .text-info a:hover {color: #b71c1c;}
 	.info-list-item:not(:last-child) {margin-bottom: 30px;}
 	.info-list-item-subtitle,
 	.info-list-item-title {text-align: center;}
+}
+@media(max-width: 1735px) {
+	.form-section-item .form-item,
+	.form-section-item.form-section-item-price p {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.form-section-item.form-section-item-price p {white-space: nowrap;}
+	.paragraph-text br {display: none;}
 }
 @media(max-width: 1680px) {
 	.about  {padding: 75px 0 119px;}
@@ -1654,6 +1769,18 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 	.card-forms {padding-left: 0;}
 	.banner-item p br, .text-logo, .catalog-cnt-image {display: none;}
+	.form-section-item {max-width: 100%;}
+	.paragraph-text {
+		font-size: 16px;
+		line-height: 24px;
+		text-align: center;
+	}
+	.form-title {text-align: center;}
+	.form-section .btn {margin: 0 auto;}
+	.section-title {
+		font-size: 36px;
+		line-height: 42px;
+	}
 }
 @media(max-width: 1200px) {
 	.main-section-cnt {width: 100%;}
@@ -1756,6 +1883,7 @@ footer .text-info a:hover {color: #b71c1c;}
 		line-height: 34px;
 		margin-bottom: 8px;
 	}
+	.form-title-m {margin-bottom: 20px;}
 	.form-subtitle {
 		margin-bottom: 28px;
 		font-size: 14px;
@@ -2119,6 +2247,12 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 	.hotel-title {margin-right: 0;}
 	.hotel .btn {margin: 0 auto 30px;}
+	.form-section-item.form-section-item-price > div {
+		justify-content: flex-start;
+		width: 50%;
+		margin: 15px 0 0;
+	}
+	.form-section-item.form-section-item-price {flex-flow: row wrap;}
 }
 @media(max-width: 360px) {
 	.left-sidebar {padding: 0px 20px 15px;}

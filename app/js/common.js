@@ -18,7 +18,7 @@ var common = {
 		})
 
 
-
+		$( ".datepicker" ).datepicker();
 
 		$('.left-sidebar > ul > li > .left-sidebar-link').click(function(event){
 			event.preventDefault();

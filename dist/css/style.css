@@ -2,6 +2,7 @@
 @import url(./libs/normilize/normilize.css);
 @import url(./fonts.css);
 @import url(./libs/owl/owl.carousel.min.css);
+@import url(./libs/jquery-ui/jquery-ui.css);
 @import url(./libs/owl/owl.theme.default.min.css);
 @font-face {
   font-family: 'Open Sans Light';
@@ -1602,6 +1603,10 @@ footer .text-info a:hover {
 .section-cnt .catalog-country {
   padding-bottom: 47px; }
 
+.info-section {
+  max-width: 1740px;
+  padding-bottom: 106px; }
+
 .section-title {
   margin-bottom: 9px;
   font-family: 'Open Sans Bold';
@@ -1735,6 +1740,64 @@ footer .text-info a:hover {
     .pagination a:not(:last-child) {
       margin-right: 9px; }
 
+.paragraph-text {
+  font-family: 'Open Sans Regular';
+  font-size: 24px;
+  line-height: 42px;
+  color: #ffffff; }
+  .paragraph-text-m {
+    font-size: 21px;
+    line-height: 32px;
+    max-width: 1154px; }
+  .paragraph-text:not(:last-child) {
+    margin-bottom: 32px; }
+  .paragraph-text:last-child {
+    margin-bottom: 50px; }
+
+.info-section .section-title {
+  margin-bottom: 53px; }
+
+.form-title-m {
+  margin-bottom: 41px; }
+
+.form-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100%; }
+  .form-section-item {
+    width: 100%;
+    max-width: 49%;
+    margin-bottom: 43px; }
+    .form-section-item .form-item {
+      margin-bottom: 0;
+      width: 100%;
+      max-width: 100%; }
+    .form-section-item.form-section-item-price {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .form-section-item.form-section-item-price > div {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+      .form-section-item.form-section-item-price p {
+        font-family: 'Open Sans Regular';
+        font-size: 21px;
+        line-height: 21px;
+        color: #acacac; }
+      .form-section-item.form-section-item-price input {
+        max-width: 116px; }
+    .form-section-item.form-section-item-comment {
+      max-width: 100%;
+      margin-bottom: 52px; }
+      .form-section-item.form-section-item-comment .textarea-field {
+        height: 140px;
+        margin-bottom: 0;
+        font-size: 21px;
+        line-height: 34px; }
+
 @media (min-width: 993px) {
   footer .text-info br {
     display: none; } }
@@ -1755,6 +1818,16 @@ footer .text-info a:hover {
   .info-list-item-subtitle,
   .info-list-item-title {
     text-align: center; } }
+
+@media (max-width: 1735px) {
+  .form-section-item .form-item,
+  .form-section-item.form-section-item-price p {
+    font-size: 16px;
+    line-height: 16px; }
+  .form-section-item.form-section-item-price p {
+    white-space: nowrap; }
+  .paragraph-text br {
+    display: none; } }
 
 @media (max-width: 1680px) {
   .about {
@@ -1910,7 +1983,20 @@ footer .text-info a:hover {
   .card-forms {
     padding-left: 0; }
   .banner-item p br, .text-logo, .catalog-cnt-image {
-    display: none; } }
+    display: none; }
+  .form-section-item {
+    max-width: 100%; }
+  .paragraph-text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center; }
+  .form-title {
+    text-align: center; }
+  .form-section .btn {
+    margin: 0 auto; }
+  .section-title {
+    font-size: 36px;
+    line-height: 42px; } }
 
 @media (max-width: 1200px) {
   .main-section-cnt {
@@ -2009,6 +2095,8 @@ footer .text-info a:hover {
     font-size: 29px;
     line-height: 34px;
     margin-bottom: 8px; }
+  .form-title-m {
+    margin-bottom: 20px; }
   .form-subtitle {
     margin-bottom: 28px;
     font-size: 14px;
@@ -2325,7 +2413,13 @@ footer .text-info a:hover {
   .hotel-title {
     margin-right: 0; }
   .hotel .btn {
-    margin: 0 auto 30px; } }
+    margin: 0 auto 30px; }
+  .form-section-item.form-section-item-price > div {
+    justify-content: flex-start;
+    width: 50%;
+    margin: 15px 0 0; }
+  .form-section-item.form-section-item-price {
+    flex-flow: row wrap; } }
 
 @media (max-width: 360px) {
   .left-sidebar {
