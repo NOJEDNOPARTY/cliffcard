@@ -93,6 +93,9 @@ var common = {
 			$('.popup-wrapper').removeClass('active');
 			$('#exercisePopup').addClass('active')
 		})
+		$('.star-item').click(function(event){
+			$(this).toggleClass('active');
+		})
 
 		$('.login-trigger').click(function(event){
 			event.preventDefault();
