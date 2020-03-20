@@ -2,6 +2,7 @@ var common = {
 	init: function() {
 		common.main();
 		common.sidebar();
+		common.tabs();
 		common.owl();
 	},
 	main: function(){
@@ -111,6 +112,16 @@ var common = {
 		
 		
 	},
+	tabs: function(){
+		$('.tabs-block .tabs-btn').click(function(e){
+			if($(this).hasClass('.active') == false) {
+				var tabCnt = '.' + $(this).attr('data-cnt');
+				$('.tabs-block .tabs-btn.active, .tabs-content-item').removeClass('active')
+				$(tabCnt).addClass('active')
+				$(this).addClass('active');
+			}
+		});
+	},
 	sidebar: function(){
 		var headerHeight = $('header').outerHeight();
 		var footerHeight = $('footer').outerHeight();
@@ -119,18 +130,24 @@ var common = {
 			if($(window).width() > 1200) {
 				var docHeight = $(document).height();
 				var footerPos = docHeight - pos - ($(window).height() - footerHeight );
+
 				if(pos > headerHeight ){
 					$(".news-list, .left-sidebar").addClass('active');
+					$('.header').addClass('active');
 				}else {
 					$(".news-list, .left-sidebar").removeClass('active');
 				}
+
 				if(footerHeight * 2 > footerPos) {
 					$(".left-sidebar").css("top", (0 - ((footerHeight * 2) - footerPos)));
 					$(".news-list").css("top", (0 - ((footerHeight * 2) - footerPos)));
+					$(".sidebar-menu-hidden, .menu-hidden-second").css("padding-top", (10 + ((footerHeight * 2) - footerPos)));
 				}else {
 					$(".left-sidebar").css("top", 0);
 					$(".news-list").css("top", 0);
+					$(".sidebar-menu-hidden, .menu-hidden-second").css("padding-top", 28);
 				}
+
 			}
 		});
 	},
