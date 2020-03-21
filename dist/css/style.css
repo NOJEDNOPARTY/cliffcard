@@ -1674,7 +1674,8 @@ footer .text-info a:hover {
   margin: 0 7px; }
 
 .hotels-section,
-.section-sell {
+.section-sell,
+.compare-section {
   max-width: 1564px; }
 
 .hotels-list,
@@ -1786,6 +1787,29 @@ footer .text-info a:hover {
     .hotel-img img,
     .section-sell-item-img img {
       width: 100%; }
+  .hotel.section-sell-item-compare,
+  .section-sell-item.section-sell-item-compare {
+    max-width: 435px; }
+    .hotel.section-sell-item-compare .section-sell-item-cnt,
+    .section-sell-item.section-sell-item-compare .section-sell-item-cnt {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 225px;
+      padding: 55px 30px 55px;
+      text-align: center; }
+
+.delete-compare-item {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 13px;
+  height: 14px; }
+  .delete-compare-item img {
+    width: 100%; }
 
 .mark-item {
   position: absolute;

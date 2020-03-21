@@ -1436,7 +1436,8 @@ footer .text-info a:hover {color: #b71c1c;}
 }
 
 .hotels-section,
-.section-sell {max-width: 1564px;}
+.section-sell,
+.compare-section {max-width: 1564px;}
 .hotels-list,
 .section-sell-items {
 	display: flex;
@@ -1528,6 +1529,29 @@ footer .text-info a:hover {color: #b71c1c;}
 		max-width: 236px;
 		& img {width: 100%;}
 	}
+	&.section-sell-item-compare {
+		max-width: 435px;
+		.section-sell-item-cnt {
+			position: relative;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: flex-start;
+			width: 100%;
+			max-width: 225px;
+			padding: 55px 30px 55px;
+			text-align: center;
+		}
+	}
+}
+
+.delete-compare-item {
+	position: absolute;
+	top: 22px;
+	left: 22px;
+	width: 13px;
+	height: 14px;
+	& img {width: 100%;}
 }
 
 
