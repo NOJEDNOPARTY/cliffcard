@@ -4,6 +4,7 @@
 @import url(./libs/owl/owl.carousel.min.css);
 @import url(./libs/owl/owl.theme.default.min.css);
 @import url(./libs/jquery-ui/jquery-ui.css);
+@import url(./libs/fancybox/jquery.fancybox.min.css);
 @font-face {
   font-family: 'Open Sans Light';
   src: url("./fonts/opensans/OpenSans-Light.woff2") format("woff2"), url("./fonts/opensans/OpenSans-Light.woff") format("woff");
@@ -357,7 +358,7 @@ header .wrapper {
 .lang-trigger,
 .apartament-book-trigger {
   position: relative;
-  margin-right: 52px;
+  margin-right: 18px;
   padding: 15px;
   cursor: pointer;
   transition: 0.3s ease; }
@@ -535,7 +536,7 @@ header .wrapper {
 
 .cart {
   position: relative;
-  margin-left: 45px; }
+  margin-left: 33px; }
 
 .cart svg {
   width: 40px;
@@ -969,7 +970,8 @@ h2 span {
   font-size: 42px;
   line-height: 42px;
   text-align: center;
-  color: #ffffff; }
+  color: #ffffff;
+  width: 100%; }
 
 .popup-title-big {
   width: 100%;
@@ -1145,7 +1147,8 @@ h2 span {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100% / 3); }
+  height: calc(100% / 3);
+  overflow: hidden; }
 
 .news-list.active .news-item,
 .news-list.active .news-head {
@@ -1644,6 +1647,9 @@ footer .text-info a:hover {
 .section-cnt-noright {
   padding: 57px 20px 165px 374px; }
 
+.apartaments-section {
+  padding: 57px 20px 90px 374px; }
+
 .section-cnt .catalog-country {
   padding-bottom: 47px; }
 
@@ -1676,6 +1682,13 @@ footer .text-info a:hover {
 
 .apartaments-section .breadcrumps {
   padding-bottom: 15px; }
+
+.cabinet-section .breadcrumps {
+  padding-bottom: 30px; }
+
+.menu-section .breadcrumps,
+.eat-delivery-section .breadcrumps {
+  padding-bottom: 47px; }
 
 .breadcrumps a,
 .breadcrumps span {
@@ -1734,6 +1747,9 @@ footer .text-info a:hover {
     .hotel-head.section-sell-item-head-between,
     .section-sell-item-head.section-sell-item-head-between {
       justify-content: space-between; }
+    .hotel-head.section-sell-item-head-alone .section-sell-item-title,
+    .section-sell-item-head.section-sell-item-head-alone .section-sell-item-title {
+      margin-right: 0; }
   .hotel-title,
   .section-sell-item-title {
     margin-right: 16px;
@@ -2282,7 +2298,8 @@ footer .text-info a:hover {
   justify-content: space-between; }
   .apartament-cnt {
     width: 100%;
-    max-width: 845px; }
+    max-width: 860px;
+    padding-right: 15px; }
   .apartament-links {
     display: flex;
     align-items: center;
@@ -2366,25 +2383,102 @@ footer .text-info a:hover {
     .apartament-buttons .btn-red {
       margin-right: 15px; }
     .apartament-buttons .btn {
-      width: auto;
+      width: 100%;
+      max-width: 246px;
       height: 57px;
-      padding: 5px 57px; }
+      padding: 5px; }
   .apartament-gallery {
     width: 100%;
-    max-width: 595px;
-    transform: translateX(20px); }
+    max-width: 595px; }
+    .apartament-gallery-block {
+      transform: translateX(20px); }
     .apartament-gallery-item {
+      position: relative;
+      display: block;
       width: 100%;
       max-width: 595px; }
       .apartament-gallery-item img {
         width: 100%; }
+    .apartament-gallery .owl-nav {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 20px; }
+      .apartament-gallery .owl-nav button {
+        width: 24px;
+        height: 39px;
+        opacity: 0.5;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        transition: 0.3s ease; }
+        .apartament-gallery .owl-nav button.owl-prev {
+          background-image: url("../images/arrow-prev.svg"); }
+        .apartament-gallery .owl-nav button.owl-next {
+          background-image: url("../images/arrow-next.svg"); }
+        .apartament-gallery .owl-nav button span {
+          display: none; }
+        .apartament-gallery .owl-nav button:hover {
+          opacity: 1; }
+    .apartament-gallery-dots {
+      width: 100%;
+      max-width: 530px;
+      margin-top: 35px; }
+      .apartament-gallery-dots button {
+        width: 100%;
+        max-width: 114px; }
+        .apartament-gallery-dots button img {
+          width: 100%; }
+        .apartament-gallery-dots button span {
+          display: none; }
   .apartament-text {
+    padding-bottom: 28px;
     font-family: 'Open Sans Light';
     font-size: 19px;
     line-height: 28px;
     color: #ffffff; }
-    .apartament-text:not(:last-child) {
-      margin-bottom: 28px; }
+
+.cabinet-section .section-title .exit-btn {
+  margin-left: 17px; }
+  .cabinet-section .section-title .exit-btn svg {
+    width: 23px;
+    height: 23px; }
+    .cabinet-section .section-title .exit-btn svg .st0 {
+      transition: 0.3s ease; }
+  .cabinet-section .section-title .exit-btn:hover svg .st0 {
+    fill: #b71c1c; }
+
+.cabinet-tabs {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 2px;
+  background-color: #0E0E0E; }
+
+.cabinet-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 355px;
+  height: 87px;
+  font-family: 'Open Sans Light';
+  font-size: 21px;
+  line-height: 21px;
+  color: #ffffff;
+  background-color: #000000;
+  transition: 0.3s ease; }
+  .cabinet-tab:hover, .cabinet-tab.active {
+    background-color: transparent; }
+  .cabinet-tab:not(:last-child) {
+    margin-right: 1px; }
+
+.cabinet-favorite {
+  max-width: 1170px; }
 
 @media (min-width: 993px) {
   footer .text-info br {
@@ -2405,7 +2499,9 @@ footer .text-info a:hover {
     margin-bottom: 45px; }
   .info-list-item-subtitle,
   .info-list-item-title {
-    text-align: center; } }
+    text-align: center; }
+  .apartament-buttons .btn {
+    max-width: 200px; } }
 
 @media (max-width: 1735px) {
   .form-section-item .form-item,
@@ -2428,7 +2524,27 @@ footer .text-info a:hover {
     padding: 25px; }
   .eat-benefits-item {
     align-items: center;
-    max-width: 350px; } }
+    max-width: 350px; }
+  .apartament-gallery,
+  .apartament-gallery-item,
+  .apartament-gallery-dots {
+    max-width: 438px; } }
+
+@media (max-width: 1550px) {
+  .apartament {
+    flex-direction: column;
+    align-items: flex-start; }
+    .apartament-cnt {
+      max-width: 100%;
+      padding-bottom: 40px; }
+    .apartament-gallery-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      transform: translateX(0); }
+    .apartament .apartament-gallery, .apartament .apartament-gallery-item, .apartament .apartament-gallery-dots {
+      max-width: 595px; } }
 
 @media (max-width: 1500px) {
   .catalog-cnt-image {
@@ -2582,56 +2698,7 @@ footer .text-info a:hover {
   .section-sell-items {
     align-items: center; }
   .pagination {
-    justify-content: center; } }
-
-@media (max-width: 1025px) {
-  .card-forms .title {
-    font-size: 70px;
-    line-height: 70px; } }
-
-@media (max-width: 992px) {
-  .eat-info-marks-block {
-    margin-left: 18px; }
-  .section-texts .btn {
-    margin: 0 auto; }
-  .error-page {
-    height: calc(100vh - 411px);
-    background-position: center;
-    background-size: contain; }
-  .error-page-cnt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    text-align: center; }
-  .title {
-    font-size: 70px;
-    line-height: 100px; }
-  .card-forms {
-    padding-left: 0; }
-  .banner-item p br, .text-logo, .catalog-cnt-image {
-    display: none; }
-  .form-section-item {
-    max-width: 100%; }
-  .paragraph-text {
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center; }
-  .form-title {
-    text-align: center; }
-  .form-section .btn {
-    margin: 0 auto; }
-  .section-title {
-    font-size: 36px;
-    line-height: 42px; }
-  .section-title-m {
-    margin-bottom: 30px;
-    font-size: 28px;
-    line-height: 34px; }
-  .section-sell-cnt-row {
-    margin-bottom: 0; } }
-
-@media (max-width: 1200px) {
+    justify-content: center; }
   .tabs-block {
     justify-content: center; }
   .form-section-item.form-section-item-comment .textarea-field {
@@ -2857,7 +2924,7 @@ footer .text-info a:hover {
     display: none; }
   .left-sidebar {
     top: 0;
-    height: calc(100vh - 176px);
+    height: calc(100vh - 134px);
     overflow-y: scroll;
     max-width: 100%;
     padding: 20px 20px 80px;
@@ -2868,9 +2935,14 @@ footer .text-info a:hover {
   .left-sidebar.open {
     display: flex; }
   .left-sidebar .catalog-country {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    margin: 0 auto;
-    padding-bottom: 30px; }
+    height: 44px !important;
+    margin: 0 auto 30px !important;
+    padding-bottom: 0; }
   .left-sidebar-menu > li:not(:last-child) .left-sidebar-link::before {
     display: none; }
   .left-sidebar-menu li .left-sidebar-link {
@@ -2973,7 +3045,64 @@ footer .text-info a:hover {
   .show-more-wrap.open .show-more {
     display: none; }
   .news-item:not(:last-child) {
-    margin-right: 0px; } }
+    margin-right: 0px; }
+  .apartament-links,
+  .apartament-call a,
+  .apartament-buttons {
+    justify-content: center;
+    max-width: 100%; }
+  .apartament-info,
+  .apartament-text {
+    text-align: center; }
+  .triggers-case {
+    display: none; } }
+
+@media (max-width: 1025px) {
+  .card-forms .title {
+    font-size: 70px;
+    line-height: 70px; } }
+
+@media (max-width: 992px) {
+  .eat-info-marks-block {
+    margin-left: 18px; }
+  .section-texts .btn {
+    margin: 0 auto; }
+  .error-page {
+    height: calc(100vh - 411px);
+    background-position: center;
+    background-size: contain; }
+  .error-page-cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    text-align: center; }
+  .title {
+    font-size: 70px;
+    line-height: 100px; }
+  .card-forms {
+    padding-left: 0; }
+  .banner-item p br, .text-logo, .catalog-cnt-image {
+    display: none; }
+  .form-section-item {
+    max-width: 100%; }
+  .paragraph-text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center; }
+  .form-title {
+    text-align: center; }
+  .form-section .btn {
+    margin: 0 auto; }
+  .section-title {
+    font-size: 36px;
+    line-height: 42px; }
+  .section-title-m {
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 34px; }
+  .section-sell-cnt-row {
+    margin-bottom: 0; } }
 
 @media (max-width: 767px) {
   .form-section-item-comment .form-item {
@@ -3021,8 +3150,8 @@ footer .text-info a:hover {
     padding: 5px 0 7px 25px; }
   .left-sidebar {
     height: calc(100vh - 166px);
-    padding: 20px 20px 80px;
-    top: -1px; }
+    padding: 20px 20px 90px;
+    top: 0; }
   .profile-link a {
     font-size: 16px;
     line-height: 16px; }
@@ -3086,7 +3215,32 @@ footer .text-info a:hover {
     line-height: 26px; }
   .eat-benefits-cnt p {
     font-size: 12px;
-    line-height: 15px; } }
+    line-height: 15px; }
+  .apartament-gallery-dots {
+    display: none !important; }
+  .apartament-buttons,
+  .apartament-links {
+    flex-direction: column; }
+    .apartament-buttons .apartament-book-trigger,
+    .apartament-buttons .btn,
+    .apartament-links .apartament-book-trigger,
+    .apartament-links .btn {
+      margin: 0 0 20px; }
+  .apartament-links a {
+    margin: 0 0 20px !important; }
+  .apartament-gallery .owl-nav {
+    padding: 0 5px; }
+  .cart {
+    display: block;
+    margin-left: 5px; }
+    .cart svg {
+      width: 30px;
+      height: 27px; }
+    .cart span {
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+      line-height: 11px; } }
 
 @media (max-width: 530px) {
   .eat-benefits {
@@ -3095,7 +3249,7 @@ footer .text-info a:hover {
     .eat-benefits-item {
       max-width: 100%; }
   .left-sidebar .catalog-country {
-    margin: 0; }
+    margin: 5px 0 30px !important; }
   .eat-info-marks-block > div {
     flex-direction: column;
     align-items: center; }
@@ -3142,7 +3296,7 @@ footer .text-info a:hover {
 
 @media (max-width: 360px) {
   .left-sidebar {
-    padding: 20px 20px 15px; }
+    padding: 5px 20px 15px; }
   .wrapper {
     padding: 0 20px; }
   .card-forms .wrapper {

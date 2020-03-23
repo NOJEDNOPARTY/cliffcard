@@ -103,6 +103,9 @@ gulp.task('server', function() {
 	connect.server({
 		port: 8882,
 		root: 'dist',
+		online: true,
+		tunnel: true,
+		logLevel: "debug",
 		livereload: true
 	});
 });

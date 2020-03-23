@@ -177,27 +177,52 @@ var common = {
 				}
 			}
 		});
-		$('.apartament-gallery').owlCarousel({
+		var gallery = $('.apartament-gallery').owlCarousel({
 			nav: true,
 			dots: true,
-			loop: true,
-			smartSpeed: 1000,
-			autoHeight:true,
 			margin: 0,
 			items: 1, 
-			autoplay: true,
-			autoplayTimeout: 6000,
+			autoWidth: true,
+			dotsContainer: '.apartament-gallery-dots',
 			responsive:{
 				0:{
-					items:1
+					items:1,
+					autoWidth: false,
 				},
-				600:{
+				768:{
 					items:1
 				},
 				1000:{
 					items:1
 				}
 			}
+		});
+		$('.apartament-gallery-dots').owlCarousel({
+			nav: false,
+			dots: false,
+			margin: 24,
+			items: 4, 
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:4
+				},
+				1551:{
+					items:3
+				},
+				1681:{
+					items:4
+				}
+			}
+		});
+		$('.apartament-gallery-dots .apartament-gallery-dots-img').click(function () {
+			var thisItem = $(this).closest('.owl-item').index();
+			setTimeout(function(){
+				console.log(thisItem)
+				gallery.trigger('to.owl.carousel', [thisItem, 300]);
+			}, 10);
 		});
 	}
 
