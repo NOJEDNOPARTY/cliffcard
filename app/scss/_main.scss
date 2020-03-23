@@ -1,8 +1,8 @@
 @import "./libs/normilize/normilize.css";
 @import "./fonts.css";
 @import "./libs/owl/owl.carousel.min.css";
-@import "./libs/jquery-ui/jquery-ui.css";
 @import "./libs/owl/owl.theme.default.min.css";
+@import "./libs/jquery-ui/jquery-ui.css";
 
 body {background: #111111;}
 body.open {overflow: hidden;}
@@ -83,13 +83,15 @@ header .wrapper {
 }
 
 .triggers-case,
-.lang-active  {
+.lang-active,
+.apartament-book-active  {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.lang-trigger {
+.lang-trigger,
+.apartament-book-trigger {
 	position: relative;
 	// z-index: 3;
 	margin-right: 52px;
@@ -98,7 +100,8 @@ header .wrapper {
 	transition: 0.3s ease;
 }
 
-.lang-trigger a, .lang-active {
+.lang-trigger a, .lang-active,
+.apartament-book-trigger a, .apartament-book-active {
 	font-family: 'Open Sans Light';
 	font-size: 21px;
 	line-height: 21px;
@@ -106,18 +109,27 @@ header .wrapper {
 	transition: 0.3s ease;
 }
 
-.lang-trigger a:not(:last-child) {margin-bottom: 13px;}
+.apartament-book-trigger a, .apartament-book-active {
+	font-size: 18px;
+	line-height: 18px;
+}
 
-.lang-trigger a:hover {color: #b71c1c;}
+.lang-trigger a:not(:last-child),
+.apartament-book-trigger a:not(:last-child) {margin-bottom: 13px;}
 
-.lang-active img {
+.lang-trigger a:hover,
+.apartament-book-trigger a:hover {color: #b71c1c;}
+
+.lang-active img,
+.apartament-book-trigger img{
 	width: 100%;
 	max-width: 9px;
 	margin-left: 13px;
 	transition: 0.3s ease;
 }
 
-.lang-select {
+.lang-select,
+.apartament-book-select {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -159,21 +171,32 @@ header .wrapper {
 
 
 
-@media(min-width: 768px) {
-	.lang-trigger:hover {background: #111111;}
-	.lang-trigger:hover {box-shadow: 0 0 15px #000000;}
-	.lang-trigger:hover .lang-active img {transform: rotate(180deg);}
-	.lang-trigger:hover .lang-select {
+@media(min-width: 1201px) {
+	.lang-trigger:hover,
+	.apartament-book-trigger:hover {
+		box-shadow: 0 0 15px #000000;
+		background: #111111;
+	}
+	.lang-trigger:hover .lang-active img,
+	.apartament-book-trigger:hover .apartament-book-active img {transform: rotate(180deg);}
+	.lang-trigger:hover .lang-select,
+	.apartament-book-trigger:hover .apartament-book-select {
 		opacity: 1;
 		z-index: 6;
 	}
 }
 
-@media(max-width: 767px) {
-	.lang-trigger.open {background: #111111;}
-	.lang-trigger.open {box-shadow: 0 0 15px #000000;}
-	.lang-trigger.open .lang-active img {transform: rotate(180deg);}
-	.lang-trigger.open .lang-select {
+@media(max-width: 1200px) {
+	.lang-trigger.open,
+	.lang-trigger.open,
+	.apartament-book-trigger.open {
+		box-shadow: 0 0 15px #000000;
+		background: #111111;
+	}
+	.lang-trigger.open .lang-active img,
+	.apartament-book-trigger.open  .apartament-book-active img {transform: rotate(180deg);}
+	.lang-trigger.open .lang-select,
+	.apartament-book-trigger.open .apartament-book-select {
 		opacity: 1;
 		z-index: 8;
 	}
@@ -1418,6 +1441,7 @@ footer .text-info a:hover {color: #b71c1c;}
 	justify-content: flex-start;
 	padding-bottom: 70px;
 }
+.apartaments-section .breadcrumps {padding-bottom: 15px;}
 
 .breadcrumps a,
 .breadcrumps span {
@@ -1606,6 +1630,22 @@ footer .text-info a:hover {color: #b71c1c;}
 	&.active {
 		& .star-item-noactive {display: none;}
 		& .star-item-active {display: block;}
+	}
+}
+
+.header-star {
+	cursor: pointer;
+	display: inline-block;
+	width: 31px;
+	height: 31px;
+	&:not(.active) {
+		& .star-item-noactive {display: inline-block;}
+		& .star-item-active {display: none;}
+	}
+
+	&.active {
+		& .star-item-noactive {display: none;}
+		& .star-item-active {display: inline-block;}
 	}
 }
 
@@ -2020,6 +2060,126 @@ footer .text-info a:hover {color: #b71c1c;}
 	text-decoration: line-through;
 }
 
+.apartament {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	&-cnt {
+		width: 100%;
+		max-width: 845px;
+	}
+	&-links {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding-bottom: 43px;
+		& a {		
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			font-family: 'Open Sans Light';
+			white-space: nowrap;
+			font-size: 16px;
+			line-height: 16px;
+			text-decoration: underline;
+			color: #ffffff;
+			transition: 0.3s ease;
+			&:hover {text-decoration: none;}
+			&:not(:last-child) {margin-right: 37px;}
+			& img {
+				max-width: 22px;
+				margin-right: 12px;
+			}
+		}
+	}
+	&-info {
+		padding-bottom: 42px;
+		font-family: 'Open Sans Regular';
+		font-size: 33px;
+		line-height: 33px;
+		color: #ffffff;
+		& .apartament-last-price {
+			color: #b71c1c;
+			text-decoration: line-through;
+		}
+		& .apartament-weight {
+			display: inline-block;
+			margin-left: 12px;
+			font-family: 'Open Sans Light';
+			font-size: 15px;
+			line-height: 15px;
+		}
+	}
+	&-call {
+		margin-bottom: 36px;
+		& a {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+			max-width: 280px;
+			& svg {
+				transform: translatey(-10px);
+				margin-right: 10px;
+				& .cls-1 {transition: 0.3s ease;}
+			}
+			&:hover {
+				& span {color: #b71c1c;} 
+				& svg .cls-1 {fill: #b71c1c;}
+			}
+		}
+		&-cnt {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			& span { transition: 0.3s ease;}
+		}
+		&-tel {
+			font-family: 'Open Sans Regular';
+			font-size: 24px;
+			line-height: 30px;
+			color: #ffffff;
+		}
+		&-operator {
+			padding-left: 13px;
+			font-family: 'Open Sans Regular';
+			font-size: 16px;
+			line-height: 16px;
+			color: #ffffff;
+		}
+	}
+	&-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 56px;
+		& .apartament-book-trigger {margin: 0 15px 0 -15px;}
+		& .btn-red {margin-right: 15px;}
+		& .btn {
+			width: auto;
+			height: 57px;
+			padding: 5px 57px;
+		}
+	}
+	&-gallery {
+		width: 100%;
+		max-width: 595px;
+		transform: translateX(20px);
+		&-item {
+			width: 100%;
+			max-width: 595px;
+			& img {width: 100%;}
+		}
+	}
+	&-text {
+		font-family: 'Open Sans Light';
+		font-size: 19px;
+		line-height: 28px;
+		color: #ffffff;
+		&:not(:last-child) {margin-bottom: 28px;}
+	}
+}
 
 
 

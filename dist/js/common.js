@@ -49,7 +49,7 @@ var common = {
 
 
 
-		$('.lang-trigger, .profile-link').click(function(event){
+		$('.lang-trigger, .profile-link, .apartament-book-trigger').click(function(event){
 			event.preventDefault();
 			$(this).toggleClass('open');
 		})
@@ -93,7 +93,7 @@ var common = {
 			$('.popup-wrapper').removeClass('active');
 			$('#exercisePopup').addClass('active')
 		})
-		$('.star-item').click(function(event){
+		$('.star-item, .header-star').click(function(event){
 			$(this).toggleClass('active');
 		})
 
@@ -157,6 +157,28 @@ var common = {
 	owl: function(){
 		$('.banner-carousel').owlCarousel({
 			nav: false,
+			dots: true,
+			loop: true,
+			smartSpeed: 1000,
+			autoHeight:true,
+			margin: 0,
+			items: 1, 
+			autoplay: true,
+			autoplayTimeout: 6000,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		$('.apartament-gallery').owlCarousel({
+			nav: true,
 			dots: true,
 			loop: true,
 			smartSpeed: 1000,
