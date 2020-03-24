@@ -1413,6 +1413,7 @@ footer .text-info a:hover {color: #b71c1c;}
 .section-cnt {padding: 57px 374px 165px;}
 .section-cnt-noright {padding: 57px 20px 165px 374px;}
 .apartaments-section {padding: 57px 20px 90px 374px;}
+.cabinet-section {padding: 57px 20px 55px 374px;}
 .section-cnt .catalog-country {padding-bottom: 47px;}
 
 .info-section {
@@ -2245,6 +2246,10 @@ footer .text-info a:hover {color: #b71c1c;}
 		margin-bottom: 30px;
 		padding: 2px;
 		background-color: #0E0E0E;
+		@media (max-width: 767px)  {
+			padding: 0px;
+			background-color: transparent;
+		}
 	}
 	&-tab {
 		display: flex;
@@ -2262,8 +2267,198 @@ footer .text-info a:hover {color: #b71c1c;}
 		&:hover,
 		&.active {background-color: transparent;}
 		&:not(:last-child) {margin-right: 1px;}
+		@media (max-width: 992px) {
+			font-size: 16px;
+			line-height: 16px;
+		}
+		@media (max-width: 767px) {
+			background-color: #0E0E0E;
+			&:not(:last-child) {margin:0 0 2px !important;}
+			&:hover {background-color: transparent ;}
+			&.active {background-color: #000000;}
+		}
 	}
 	&-favorite {max-width: 1170px;}
+	&-change-settings {
+		padding-top: 20px;
+		.form-section-item:not(.change-pass) {max-width: 1120px;}
+		.change-pass {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			flex-flow: row wrap;
+			max-width: 1290px;
+			& .btn {
+				max-width: 200px;
+				height: 49px;
+				font-size: 16px;
+				line-height: 16px;
+			}
+			& .form-row {
+				width: 100%;
+				max-width: 32%;
+			}
+			& .change-pass-btn {margin-left: 22px;}
+			& .hidden-form-items {display: none;}
+			&.active {
+				justify-content: space-between;
+				& .change-pass-btn {display: none;}
+				& .hidden-form-items {
+					display: block;
+					&.save-pass-btn {
+						display: flex;
+						margin-top: 43px;
+					}
+				}
+			}
+		}
+		& .form-row {
+			position: relative;
+			cursor: pointer;
+			& > span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-family: 'Open Sans Regular';
+				font-size: 21px;
+				line-height: 21px;
+				color: #acacac;
+				white-space: nowrap;
+				& .form-row-bold {
+					font-family: 'Open Sans Regular';
+					color: #ffffff;
+				}
+			}
+			&.active > span {display: none;}
+		}
+	}
+}
+
+.table-row {
+	width: 100%;
+    max-width: 1428px;
+	&:not(.table-row-2) td {padding: 0;}
+	tr { 
+		padding: 18px 20px;
+		&.table-row-first {border-bottom: 1px solid #000000;}
+		& th {
+			padding: 20px 5px 16px;
+			font-family: 'Open Sans Light';
+			font-size: 21px;
+			line-height: 26px;
+			color: #ffffff;
+			vertical-align: middle;
+			text-align: center;
+		}
+		& td {
+			padding: 20px 5px 12px;
+			font-family: 'Open Sans Light';
+			font-size: 20px;
+			line-height: 21px;
+			color: #ffffff;
+			vertical-align: middle;
+			text-align: center;
+		}
+		& .table-date {
+			font-family: 'Open Sans Light';
+			font-size: 18px;
+			line-height: 22px;
+			color: #ffffff;
+		}
+		& .table-column-1 {width: 70px;}
+		& .table-column-2 {
+			width: 115px;
+			text-align: left;
+		}
+		& .table-column-3 {text-align: left;}
+		& .table-column-4 {width: 130px;}
+		& .table-column-5 {width: 100px;}
+		& .table-column-6 {width: 130px;}
+		& .table-column-7 {width: 30px;}
+		& .delete-card-item img {
+			cursor: pointer;
+			width: 100%;
+			max-width: 21px;
+		}
+	}
+	& .table-trigger {
+		cursor: pointer;
+		& img {
+			max-width: 21px;
+			margin: 0 auto;
+		}
+		.table-trigger-open {display: block;}
+		.table-trigger-close {display: none;}
+		&.open {
+			.table-trigger-open {display: none;}
+			.table-trigger-close {display: block;}
+		}
+	}
+	& .table-row {
+		& td {padding: 20px 5px 16px;}
+		& .hidden-rows {display: none;}
+		&.open  {
+			background-color: #0f0f0f;
+			.hidden-rows {
+				display: table-row;
+				& td {padding: 0px 5px 7px;}
+			}
+		}
+		& .table-column-3 {font-family: 'Open Sans Regular';}
+	}
+	&.card-table {
+		tr.bg-darkgray {background-color: #0f0f0f;}
+		td {padding: 18px 5px 18px;}
+		.card-total {
+			border-top: 1px solid #000000;
+			.table-column-6 {font-family: 'Open Sans Bold';}
+		}
+		.card-quantity {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&-icons{
+				cursor: pointer;
+				display: inline-block;
+				min-width: 21px;
+				max-width: 21px;
+				min-height: 2px;
+				& img {width: 100%;}
+				&.minus-item {margin-right: 2px;}
+				&.plus-item {margin-left: 2px;}
+			}
+			& label {
+				min-width: 83px;
+				input {
+					background: none !important;
+					outline: 0 !important;
+					border: 0 !important;
+				}
+				span, input {
+					font-family: 'Open Sans Light';
+					font-size: 20px;
+					line-height: 20px;
+					color: #ffffff;
+					white-space: nowrap;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.card-submit {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	max-width: 1428px;
+	& .btn {
+		max-width: 200px;
+		height: 49px;
+		margin-top: 28px;
+		font-size: 16px;
+		line-height: 16px;
+	}
 }
 
 
@@ -2335,6 +2530,9 @@ footer .text-info a:hover {color: #b71c1c;}
 	.apartament-gallery,
 	.apartament-gallery-item,
 	.apartament-gallery-dots {max-width: 438px;}
+	.cabinet-change-settings .change-pass .form-row {max-width: 100% !important;}
+	.cabinet-change-settings .change-pass .form-row {margin-bottom: 43px;}
+	.cabinet-change-settings .change-pass .change-pass-btn {margin-left: 0;}
 }
 @media(max-width: 1550px) {
 	.apartament {
@@ -2410,6 +2608,10 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 	footer .text-info {margin-bottom: 40px;}
 	.error-page {height: calc(100vh - 288px);}
+	.cabinet-tab {
+		font-size: 19px;
+		line-height: 19px;
+	}
 }
 @media(max-width: 1200px) {
 	.section-title-m,
@@ -2946,6 +3148,10 @@ footer .text-info a:hover {color: #b71c1c;}
 		line-height: 34px;
 	}
 	.section-sell-cnt-row {margin-bottom: 0;}
+	.cabinet-change-settings .form-row > span {
+		font-size: 16px;
+		line-height: 16px;
+	}
 }
 @media(max-width: 767px) {
 	.form-section-item-comment .form-item {height: 60px;}
@@ -3092,6 +3298,30 @@ footer .text-info a:hover {color: #b71c1c;}
 			line-height: 11px;
 		}
 	}
+	.table-row tr th {
+		font-size: 15px;
+		line-height: 15px;
+	}
+	.table-row tr td,
+	.table-row tr .table-date {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	.table-container {
+		width: 100%;
+		overflow-x: scroll;
+		& table {min-width: 550px;}
+		& table.table-row:not(.card-table)  {min-width: 670px;}
+	}
+	.card-submit {justify-content: center;}
+	.hotel-head, .section-sell-item-head {height: auto;}
+}
+@media(max-width: 600px) {
+	.cabinet-change-settings .form-row > span {
+		font-size: 12px;
+		line-height: 12px;
+		white-space: pre-wrap;	
+	}
 }
 @media(max-width: 530px) {
 	.eat-benefits {
@@ -3148,6 +3378,12 @@ footer .text-info a:hover {color: #b71c1c;}
 	.left-sidebar {padding: 5px 20px 15px;}
 	.wrapper {padding: 0 20px;}
 	.card-forms .wrapper {padding: 0 15px 0 18px;}
+}
+@media(max-width: 340px) {
+	.profile-link a {
+		font-size: 14px;
+		line-height: 14px;
+	}
 }
 
 @media(max-height: 590px)  {

@@ -113,6 +113,49 @@ var common = {
 			$('.popup-wrapper').removeClass('active');
 		})
 		
+		$('.change-pass-btn').click(function(event){
+			event.preventDefault();
+			$(this).closest('.change-pass').addClass('active');
+			$(this).closest('form').find('.form-item').removeAttr("disabled");
+		})
+		$('.save-pass-btn').click(function(event){
+			event.preventDefault();
+			$(this).closest('.change-pass').removeClass('active');
+			$(this).closest('form').find('.form-item').attr("disabled", true);
+		})
+
+		$('.table-trigger').click(function(event){
+			event.preventDefault();
+			$(this).toggleClass('open');
+			$(this).closest('.table-row').toggleClass('open');
+		})
+		$('.minus-item').click(function(event){
+			event.preventDefault();
+			var step =  $(this).closest('.card-quantity').find('.card-quantity-num').attr('data-step');
+			var currentNum = $(this).closest('.card-quantity').find('.card-quantity-num').text();
+			var minus = Number(currentNum) - Number(step);
+			if((Number(currentNum) - Number(step)) !== 0) {
+				$(this).closest('.card-quantity').find('.card-quantity-num').text(minus);
+				$(this).closest('.card-quantity').find('.quantity-field').val(minus);
+			}
+		})
+		$('.plus-item').click(function(event){
+			event.preventDefault();
+			var step =  $(this).closest('.card-quantity').find('.card-quantity-num').attr('data-step');
+			var currentNum = $(this).closest('.card-quantity').find('.card-quantity-num').text();
+			var sum = Number(currentNum) + Number(step);
+			$(this).closest('.card-quantity').find('.card-quantity-num').text(sum);
+			$(this).closest('.card-quantity').find('.quantity-field').val(sum);
+		})
+
+		$('.form-row input').keyup(function(){
+			if($(this).val() == '') {
+				$(this).closest('.form-row').removeClass('active')
+			}else {$(this).closest('.form-row').addClass('active')}
+		});
+
+	
+
 		
 	},
 	tabs: function(){
