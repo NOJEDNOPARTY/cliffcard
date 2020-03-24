@@ -1449,6 +1449,7 @@ footer .text-info a:hover {color: #b71c1c;}
 .cabinet-section .breadcrumps {padding-bottom: 30px;}
 .menu-section .breadcrumps,
 .eat-delivery-section .breadcrumps {padding-bottom: 47px;}
+.compare-section .breadcrumps {padding-bottom: 2px;}
 
 .breadcrumps a,
 .breadcrumps span {
@@ -1577,6 +1578,12 @@ footer .text-info a:hover {color: #b71c1c;}
 			text-align: center;
 		}
 	}
+}
+
+.section-sell-item-compare .section-sell-item-weight,
+.section-sell-item-compare .section-sell-item-text,
+.section-sell-item-compare .section-sell-item-title span {
+	@media (min-width: 531px) {display: none;}
 }
 
 .delete-compare-item {
@@ -2461,6 +2468,66 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 }
 
+.compare-list {
+	&-head {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding-left: 482px;
+		margin-bottom: 22px;
+		&-item {
+			font-family: 'Open Sans Bold';
+			font-size: 32px;
+			line-height: 32px;
+			color: #ffffff;
+		}
+	}
+	&-item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		&:not(:last-child) {margin-bottom: 35px;}
+		& .section-sell-item {margin-bottom: 0;}
+		&-column {
+			font-family: 'Open Sans Light';
+			color: #ffffff;
+			&.compare-list-column-2 {
+				font-family: 'Open Sans Bold';
+				font-size: 21px;
+				line-height: 21px;
+			}
+			&.compare-list-column-3 {
+				font-size: 21px;
+				line-height: 21px;
+			}
+			&.compare-list-column-4 {
+				font-size: 18px;
+				line-height: 21px;
+			}
+		}
+	}
+
+	.compare-list-column-1 {
+		width: 100%;
+		min-width: 485px;
+		max-width: 485px;
+	}
+	.compare-list-column-2 {
+		width: 100%;
+		min-width: 170px;
+		max-width: 170px;
+	}
+	.compare-list-column-3 {
+		width: 100%;
+		min-width: 185px;
+		max-width: 185px;
+	}
+	.compare-list-column-4 {
+		width: 100%;
+		min-width: 330px;
+		max-width: 330px;
+	}
+}
 
 
 
@@ -2534,6 +2601,20 @@ footer .text-info a:hover {color: #b71c1c;}
 	.cabinet-change-settings .change-pass .form-row {margin-bottom: 43px;}
 	.cabinet-change-settings .change-pass .change-pass-btn {margin-left: 0;}
 }
+@media(max-width: 1560px) {
+	.compare-list .compare-list-column-2 {
+		min-width: 120px;
+    	max-width: 120px;
+	}
+	.compare-list .compare-list-column-3 {
+		min-width: 100px;
+		max-width: 100px;
+	}
+	.compare-list .compare-list-column-4 {
+		min-width: 220px;
+		max-width: 220px;
+	}
+}
 @media(max-width: 1550px) {
 	.apartament {
 		flex-direction: column;
@@ -2592,6 +2673,33 @@ footer .text-info a:hover {color: #b71c1c;}
 	.text-logo {
 		top: -24px;
 		right: 0;
+	}
+}
+@media(max-width: 1300px) {
+	.compare-list-head-item {
+		font-size: 24px;
+		line-height: 24px;
+	}
+	.compare-list-item-column.compare-list-column-2,
+	.compare-list-item-column.compare-list-column-3 {
+		font-size: 16px;
+    	line-height: 16px;
+	}
+	.compare-list .compare-list-column-2 {
+		min-width: 90px;
+		max-width: 90px;
+	}
+	.compare-list .compare-list-column-3{
+		min-width: 70px;
+		max-width: 70px;
+	}
+	.compare-list  .compare-list-column-4 {
+		min-width: 160px;
+		max-width: 160px;
+	}
+	.compare-list-item-column.compare-list-column-4 {
+		font-size: 14px;
+    	line-height: 17px;
 	}
 }
 @media(max-width: 1280px) {
@@ -2950,14 +3058,14 @@ footer .text-info a:hover {color: #b71c1c;}
 		height: calc(100vh - 134px);
 		overflow-y: scroll;
 		max-width: 100%;
-		padding: 20px 20px 80px;
+		padding: 0 30px 80px;
 		display: none;
 		align-items: flex-start;
 		background: #111111;
 		z-index: 5;
 	}
 
-	.left-sidebar.open {display: flex;}
+	.left-sidebar.open {display: block;}
 
 	.left-sidebar .catalog-country {
 		display: -webkit-box; 
@@ -2965,6 +3073,7 @@ footer .text-info a:hover {color: #b71c1c;}
 		display: -ms-flexbox;
 		display: -webkit-flex; 
 		display: flex;
+		justify-content: center;
 		height: 44px !important;
 		margin: 0 auto 30px !important;
 		padding-bottom: 0;
@@ -3102,6 +3211,23 @@ footer .text-info a:hover {color: #b71c1c;}
 	.apartament-info,
 	.apartament-text {text-align: center;}
 	.triggers-case {display: none;}
+	.compare-section .breadcrumps {padding-bottom: 20px;}
+	.compare-list-item {
+		justify-content: center;
+		width: 100%;
+		max-width: 780px;
+		margin: 0 auto;
+	}
+	.compare-list .compare-list-column-1 {
+		min-width: 460px;
+		max-width: 460px;
+	}
+	.compare-list-head {
+		width: 100%;
+		max-width: 780px;
+		padding-left: 460px;
+		margin: 0 auto 15px;
+	}
 }
 @media(max-width: 1025px) {
 	.card-forms .title {
@@ -3152,6 +3278,14 @@ footer .text-info a:hover {color: #b71c1c;}
 		font-size: 16px;
 		line-height: 16px;
 	}
+	.hotel-img, .section-sell-item-img {max-width: 180px;}
+	.hotel.section-sell-item-compare, .section-sell-item.section-sell-item-compare {max-width: 395px;}
+	.hotel .section-sell-item-cnt, .section-sell-item.section-sell-item-compare .section-sell-item-cnt {padding: 30px 30px 30px;}
+	.compare-list .compare-list-column-1 {
+		min-width: 410px;
+		max-width: 410px;
+	}
+	.compare-list-head {padding-left: 410px;}
 }
 @media(max-width: 767px) {
 	.form-section-item-comment .form-item {height: 60px;}
@@ -3198,7 +3332,7 @@ footer .text-info a:hover {color: #b71c1c;}
 	.menu-hidden-second {padding: 5px 0 7px 25px;}
 	.left-sidebar {
 		height: calc(100vh - 166px);
-		padding: 20px 20px 90px;
+		padding: 0px 30px 90px;
 		top: 0;
 	}
 	.profile-link a {
@@ -3315,6 +3449,22 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 	.card-submit {justify-content: center;}
 	.hotel-head, .section-sell-item-head {height: auto;}
+	.compare-list-head {display: none;}
+	.compare-list-item {
+		flex-direction: column;
+    	align-items: center;
+	}
+
+	.compare-list .compare-list-item-column{min-width: 1px !important;}
+	.compare-list .compare-list-item-column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		max-width: 395px;
+		margin: 0 auto 15px;
+		text-align: center;
+	}
 }
 @media(max-width: 600px) {
 	.cabinet-change-settings .form-row > span {
@@ -3324,6 +3474,8 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 }
 @media(max-width: 530px) {
+	.left-sidebar-link, .sidebar-menu-hidden li .sidebar-menu-hidden-link {justify-content: flex-start;}
+	.left-sidebar .catalog-country  {justify-content: flex-start;}
 	.eat-benefits {
 		flex-direction: column;
 		align-items: center;
@@ -3347,9 +3499,9 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 	.hotel-cnt,
 	.section-sell-item-cnt {
-		max-width: 100%;
+		max-width: 100% !important;
 		text-align: center;
-		padding: 0;
+		padding: 0 !important;
 	}
 	.hotel-head,
 	.section-sell-item-head {
@@ -3370,6 +3522,17 @@ footer .text-info a:hover {color: #b71c1c;}
 		font-size: 16px;
 		line-height: 22px;
 	}
+	.compare-list .compare-list-column-2,
+	.compare-list .compare-list-column-3,
+	.compare-list .compare-list-column-4 {display: none;}
+	.section-sell-item-compare .section-sell-item-img {max-width: 250px;}
+	.delete-compare-item {
+		top: 5px;
+		left: -7px;
+		width: 15px;
+		height: 17px;
+	}
+	.section-sell-item {overflow: initial;}
 }
 @media(max-height:768px) {
 	.error-page {background-position: center;}
