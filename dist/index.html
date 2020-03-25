@@ -88,7 +88,7 @@
         <div class="wrapper">
             <p class="text-info">
                 © CliffCard Corp. (CCC) <br> Zanker road, San Jose, California (USA), 2020.<br>  По всем вопросам Вы можете обращаться в <br>
-                <a href="#">Службу поддержки</a>
+                <a href="./help.html">Службу поддержки</a>
             </p>
             <div class="social">
                 <a class="youtube" href=""><img src="./images/youtube.svg" alt="youtube"></a>
@@ -96,6 +96,54 @@
             </div>
         </div>
     </footer>
+    <div id="loginPopup" class="popup-wrapper login-popup">
+        <div class="popup-layout">
+            <div class="popup">
+                <div class="popup-title popup-title-small">Войти</div>
+                <form action="#">
+                    <input type="email" name="email" class="form-item" placeholder="Ваш E-mail">
+                    <input type="password" name="password" class="form-item no-margin" placeholder="Пароль">
+                    <div class="login-popup-links">
+                        <a class="change-password-trigger" href="#">Забыли пароль</a>
+                        <span>|</span>
+                        <a href="./card.html">Заказать карту</a>
+                    </div>
+                    <input class="btn btn-blue" type="submit" value="Вход">
+                </form>
+                <div class="popup-close"><img src="./images/close.svg" alt="close"></div>
+            </div>
+        </div>
+    </div>
+    <div id="changePassPopup" class="popup-wrapper login-popup pass-popup">
+        <div class="popup-layout">
+            <div class="popup">
+                <div class="popup-title popup-title-small">Смена пароля </div>
+                <form action="#">
+                    <input type="email" name="email" class="form-item" placeholder="Введите Ваш E-mail">
+                    <input class="btn btn-blue change-pass-info" type="submit" value="Далее">
+                </form>
+                <div class="popup-close"><img src="./images/close.svg" alt="close"></div>
+            </div>
+        </div>
+    </div>
+    <div id="changePassInfoPopup" class="popup-wrapper login-popup pass-popup">
+        <div class="popup-layout">
+            <div class="popup">
+                <div class="popup-title popup-title-small">Смена пароля </div>
+                <p>На Ваш E-mail будет отправлена <br>  дальнейшая инструкция.   </p>
+                <div class="popup-close"><img src="./images/close.svg" alt="close"></div>
+            </div>
+        </div>
+    </div>
+    <div id="thanksPopup" class="popup-wrapper">
+        <div class="popup-layout">
+            <div class="popup">
+                <div class="popup-title">Ваше письмо ОТПРАВЛЕНО! </div>
+                <div class="popup-subtitle">Спасибо за обращение в КлиффКард!</div>
+                <div class="popup-close"><img src="./images/close.svg" alt="close"></div>
+            </div>
+        </div>
+    </div>
     <script src="./js/libs/jquery-3.3.1.min.js"></script>
     <script src="./js/libs/owlcarousel/owl.carousel.min.js"></script>
     <script src="./js/libs/jquery-ui/jquery-ui.js"></script>
