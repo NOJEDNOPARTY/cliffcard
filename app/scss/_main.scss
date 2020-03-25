@@ -1587,6 +1587,7 @@ footer .text-info a:hover {color: #b71c1c;}
 }
 
 .delete-compare-item {
+	cursor: pointer;
 	position: absolute;
 	top: 22px;
 	left: 22px;
@@ -1750,6 +1751,7 @@ footer .text-info a:hover {color: #b71c1c;}
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				@media(min-width: 531px) {padding: 0 0 0 6px;}
 			}
 			& p {
 				font-family: 'Open Sans Regular';
@@ -2430,7 +2432,10 @@ footer .text-info a:hover {color: #b71c1c;}
 				min-width: 21px;
 				max-width: 21px;
 				min-height: 2px;
-				& img {width: 100%;}
+				& img {
+					width: 100%;
+					min-height: 2px;
+				}
 				&.minus-item {margin-right: 2px;}
 				&.plus-item {margin-left: 2px;}
 			}
@@ -2722,6 +2727,21 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 }
 @media(max-width: 1200px) {
+	header.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 5;
+		&:not(.open) .triggers-case,
+		&:not(.open) .header-top .logo {display: none;}
+		&:not(.open) .header-top {margin-bottom: 0;}
+	}
+	header.open:not(.fixed) {position: relative;}
+	header.open {
+		z-index: 8;
+		box-shadow: none;
+	}
 	.section-title-m,
 	.small-text {text-align: center;}
 	.eat-info-marks {justify-content: center;}
@@ -3007,7 +3027,6 @@ footer .text-info a:hover {color: #b71c1c;}
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		margin-bottom: 24px;
 	}
 
 	.profile .logo {margin-bottom: 0px;}
@@ -3054,15 +3073,16 @@ footer .text-info a:hover {color: #b71c1c;}
 	.catalog-country {display:none;}
 
 	.left-sidebar {
+		position: fixed;
 		top: 0;
-		height: calc(100vh - 134px);
+		height: 100vh;
 		overflow-y: scroll;
 		max-width: 100%;
-		padding: 0 30px 80px;
+		padding: 134px 30px 80px;
 		display: none;
 		align-items: flex-start;
 		background: #111111;
-		z-index: 5;
+		z-index: 7;
 	}
 
 	.left-sidebar.open {display: block;}
@@ -3331,8 +3351,8 @@ footer .text-info a:hover {color: #b71c1c;}
 	.sidebar-menu-hidden {padding: 5px 0 15px 25px;}
 	.menu-hidden-second {padding: 5px 0 7px 25px;}
 	.left-sidebar {
-		height: calc(100vh - 166px);
-		padding: 0px 30px 90px;
+		height: 100vh;
+		padding: 176px 30px 90px;
 		top: 0;
 	}
 	.profile-link a {
@@ -3465,6 +3485,7 @@ footer .text-info a:hover {color: #b71c1c;}
 		margin: 0 auto 15px;
 		text-align: center;
 	}
+	.profile .header-top  {margin-bottom: 24px;}
 }
 @media(max-width: 600px) {
 	.cabinet-change-settings .form-row > span {
@@ -3538,7 +3559,7 @@ footer .text-info a:hover {color: #b71c1c;}
 	.error-page {background-position: center;}
 }
 @media(max-width: 360px) {
-	.left-sidebar {padding: 5px 20px 15px;}
+	.left-sidebar {padding: 176px 20px 15px;}
 	.wrapper {padding: 0 20px;}
 	.card-forms .wrapper {padding: 0 15px 0 18px;}
 }
