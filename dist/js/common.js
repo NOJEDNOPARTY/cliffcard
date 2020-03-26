@@ -50,9 +50,9 @@ var common = {
 
 
 
-		$('.lang-trigger, .profile-link, .apartament-book-trigger').click(function(event){
+		$('.lang-active, .profile-name, .apartament-book-active').click(function(event){
 			event.preventDefault();
-			$(this).toggleClass('open');
+			$(this).closest('.link-trigger').toggleClass('open');
 		})
 
 		$('input.btn:not(.change-pass-info)[type="submit"').click(function(event){
@@ -100,6 +100,12 @@ var common = {
 
 		$('.delete-compare-item').click(function(event){
 			$(this).closest('.compare-list-item').remove();
+		});
+		$('.delete-card-item').click(function(event){
+			$(this).closest('tr').remove();
+		});
+		$('.cabinet-favorite .star-item').click(function(event){
+			$(this).closest('.section-sell-item').remove();
 		})
 
 		$('.login-trigger').click(function(event){
@@ -174,10 +180,25 @@ var common = {
 				$('body').css({'margin-top':0})
 			}
 		};
-		if($(window).width() < 1201) {fixPanel();}
+		function fixPanelMob() {
+			if ($(window).scrollTop() > headerHeight) {
+				$('header.profile').addClass('fixed');
+				$('body').css({'margin-top': headerHeight})
+			}else {
+				$('header.profile').removeClass('fixed')
+				$('body').css({'margin-top':0})
+			}
+		};
+		if($(window).width() < 1201 && $(window).width() > 767) {
+			fixPanel();
+		}else if($(window).width() < 768){
+			fixPanelMob()
+		}
 		$(window).scroll(function() {
-			if($(window).width() < 1201) {
+			if($(window).width() < 1201 && $(window).width() > 767) {
 				fixPanel();
+			}else if($(window).width() < 768){
+				fixPanelMob()
 			}
 		});
 	},
@@ -263,7 +284,7 @@ var common = {
 				}
 			}
 		});
-		$('.apartament-gallery-dots').owlCarousel({
+		var galleryDots = $('.apartament-gallery-dots').owlCarousel({
 			nav: false,
 			dots: false,
 			margin: 24,
@@ -288,8 +309,14 @@ var common = {
 			setTimeout(function(){
 				gallery.trigger('to.owl.carousel', [thisItem, 300]);
 			}, 1)
-			
 		});
+
+		$('.apartament-gallery .owl-next').click(function() {
+			galleryDots.trigger('next.owl.carousel');
+		})
+		$('.apartament-gallery .owl-prev').click(function() {
+			galleryDots.trigger('prev.owl.carousel', [300]);
+		})
 	}
 
 };

@@ -191,6 +191,16 @@ header .wrapper {
   }
 }
 @media (max-width: 1200px) {
+  .lang-select {
+    z-index: 7;
+    opacity: 1;
+    display: none;
+    transition: 0s;
+  }
+  .lang-trigger a,
+  .lang-active {
+    transition: 0s;
+  }
   .lang-trigger.open,
   .lang-trigger.open,
   .apartament-book-trigger.open {
@@ -201,7 +211,9 @@ header .wrapper {
   .apartament-book-trigger.open .apartament-book-active img {
     transform: rotate(180deg);
   }
-  .lang-trigger.open .lang-select,
+  .lang-trigger.open .lang-select {
+    display: flex;
+  }
   .apartament-book-trigger.open .apartament-book-select {
     opacity: 1;
     z-index: 8;
@@ -1617,6 +1629,7 @@ footer .text-info a:hover {
     height: auto;
     overflow: auto;
     -webkit-line-clamp: 50;
+    text-align: center;
   }
 }
 .hotel .btn,
@@ -2994,12 +3007,19 @@ footer .text-info a:hover {
     width: 100%;
     z-index: 5;
   }
-  header.fixed .triggers-case,
-  header.fixed .header-top .logo {
+  header.fixed:not(.open) .triggers-case,
+  header.fixed:not(.open) .header-top .logo {
     display: none;
   }
-  header.fixed .header-top {
+  header.fixed:not(.open) .header-top {
     margin-bottom: 0;
+  }
+  header.open:not(.fixed) {
+    position: relative;
+  }
+  header.open {
+    z-index: 8;
+    box-shadow: none;
   }
   .section-title-m,
   .small-text {
@@ -3372,7 +3392,6 @@ footer .text-info a:hover {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 24px;
   }
   .profile .logo {
     margin-bottom: 0px;
@@ -3418,15 +3437,15 @@ footer .text-info a:hover {
   }
   .left-sidebar {
     position: fixed;
-    top: 134px;
-    height: calc(100vh - 134px);
+    top: 0;
+    height: 100vh;
     overflow-y: scroll;
     max-width: 100%;
-    padding: 0 30px 80px;
+    padding: 134px 30px 80px;
     display: none;
     align-items: flex-start;
     background: #111111;
-    z-index: 5;
+    z-index: 7;
   }
   .left-sidebar.open {
     display: block;
@@ -3754,9 +3773,9 @@ footer .text-info a:hover {
     padding: 5px 0 7px 25px;
   }
   .left-sidebar {
-    height: calc(100vh - 166px);
-    padding: 0px 30px 90px;
-    top: 166px;
+    height: 100vh;
+    padding: 176px 30px 90px;
+    top: 0;
   }
   .profile-link a {
     font-size: 16px;
@@ -3922,6 +3941,9 @@ footer .text-info a:hover {
     margin: 0 auto 15px;
     text-align: center;
   }
+  .profile .header-top {
+    margin-bottom: 24px;
+  }
 }
 @media (max-width: 600px) {
   .cabinet-change-settings .form-row > span {
@@ -3967,11 +3989,21 @@ footer .text-info a:hover {
     box-shadow: none;
     border-radius: 0;
   }
+  .hotel-img,
+  .section-sell-item-img {
+    order: 1;
+    margin-bottom: 30px;
+  }
   .hotel-cnt,
   .section-sell-item-cnt {
     max-width: 100% !important;
     text-align: center;
     padding: 0 !important;
+    order: 2;
+  }
+  .hotel-cnt .btn,
+  .section-sell-item-cnt .btn {
+    margin-bottom: 0;
   }
   .hotel-head,
   .section-sell-item-head {
@@ -3984,7 +4016,7 @@ footer .text-info a:hover {
   }
   .hotel .btn,
   .section-sell-item .btn {
-    margin: 0 auto 30px;
+    margin: 0 auto;
   }
   .form-section-item.form-section-item-price > div {
     justify-content: flex-start;
@@ -4023,7 +4055,7 @@ footer .text-info a:hover {
 }
 @media (max-width: 360px) {
   .left-sidebar {
-    padding: 5px 20px 15px;
+    padding: 176px 20px 15px;
   }
   .wrapper {
     padding: 0 20px;

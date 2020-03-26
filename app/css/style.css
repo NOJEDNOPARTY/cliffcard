@@ -340,8 +340,9 @@ header {
   display: block;
   width: 100%;
   padding: 21px 0 18px;
-  background: #111111;
-  box-shadow: 0 0 50px #000000; }
+  background: #111111; }
+  header.profile {
+    box-shadow: 0 0 50px #000000; }
 
 header .wrapper {
   display: flex;
@@ -445,6 +446,13 @@ header .wrapper {
     z-index: 6; } }
 
 @media (max-width: 1200px) {
+  .lang-select {
+    z-index: 7;
+    opacity: 1;
+    display: none;
+    transition: 0s; }
+  .lang-trigger a, .lang-active {
+    transition: 0s; }
   .lang-trigger.open,
   .lang-trigger.open,
   .apartament-book-trigger.open {
@@ -453,7 +461,8 @@ header .wrapper {
   .lang-trigger.open .lang-active img,
   .apartament-book-trigger.open .apartament-book-active img {
     transform: rotate(180deg); }
-  .lang-trigger.open .lang-select,
+  .lang-trigger.open .lang-select {
+    display: flex; }
   .apartament-book-trigger.open .apartament-book-select {
     opacity: 1;
     z-index: 8; } }
@@ -501,7 +510,7 @@ header .wrapper {
 .profile-link-cnt a:hover {
   color: #b71c1c; }
 
-@media (min-width: 768px) {
+@media (min-width: 1201px) {
   .profile-link:hover,
   .profile-link:hover {
     box-shadow: 0 0 15px #000000;
@@ -512,14 +521,19 @@ header .wrapper {
     opacity: 1;
     z-index: 6; } }
 
-.profile-link.open {
-  box-shadow: 0 0 15px #000000;
-  background: #111111; }
-  .profile-link.open .profile-name {
-    border-bottom: 1px solid #ffffff; }
-  .profile-link.open .profile-link-cnt {
+@media (max-width: 1200px) {
+  .profile-link .profile-link-cnt {
     opacity: 1;
-    z-index: 6; }
+    z-index: 6;
+    display: none;
+    transition: 0s; }
+  .profile-link.open {
+    box-shadow: 0 0 15px #000000;
+    background: #111111; }
+    .profile-link.open .profile-name {
+      border-bottom: 1px solid #ffffff; }
+    .profile-link.open .profile-link-cnt {
+      display: flex; } }
 
 .profile-name {
   margin-right: 10px;
@@ -1158,15 +1172,14 @@ h2 span {
   width: 100%; }
 
 .news-head {
-  background: rgba(0, 0, 0, 0.5); }
-  .news-head a {
-    font-family: 'Open Sans Bold';
-    font-size: 32px;
-    line-height: 32px;
-    color: #ffffff;
-    transition: 0.3s ease; }
-    .news-head a:hover {
-      color: #b71c1c; }
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Open Sans Bold';
+  font-size: 32px;
+  line-height: 32px;
+  color: #ffffff;
+  transition: 0.3s ease; }
+  .news-head:hover {
+    color: #b71c1c; }
 
 .news-title {
   position: absolute;
@@ -1814,7 +1827,8 @@ footer .text-info a:hover {
       .section-sell-item-text {
         height: auto;
         overflow: auto;
-        -webkit-line-clamp: 50; } }
+        -webkit-line-clamp: 50;
+        text-align: center; } }
   .hotel .btn,
   .section-sell-item .btn {
     height: 38px;
@@ -2544,23 +2558,41 @@ footer .text-info a:hover {
         .cabinet-change-settings .change-pass.active .hidden-form-items.save-pass-btn {
           display: flex;
           margin-top: 43px; }
-  .cabinet-change-settings .form-row {
-    position: relative;
-    cursor: pointer; }
-    .cabinet-change-settings .form-row > span {
-      position: absolute;
-      top: 0;
-      left: 0;
+
+.form-row {
+  display: block;
+  position: relative; }
+  .form-row > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Open Sans Regular';
+    font-size: 21px;
+    line-height: 21px;
+    color: #acacac;
+    white-space: nowrap; }
+    .form-row > span .form-row-bold {
       font-family: 'Open Sans Regular';
-      font-size: 21px;
-      line-height: 21px;
-      color: #acacac;
-      white-space: nowrap; }
-      .cabinet-change-settings .form-row > span .form-row-bold {
-        font-family: 'Open Sans Regular';
-        color: #ffffff; }
-    .cabinet-change-settings .form-row.active > span {
-      display: none; }
+      color: #ffffff; }
+  .form-row.active > span {
+    display: none; }
+
+.info-section .form-row > span {
+  font-size: 16px;
+  line-height: 16px; }
+  @media (max-width: 1250px) {
+    .info-section .form-row > span {
+      font-size: 14px;
+      line-height: 14px; } }
+  @media (max-width: 1200px) {
+    .info-section .form-row > span {
+      font-size: 16px;
+      line-height: 16px; } }
+  @media (max-width: 930px) {
+    .info-section .form-row > span {
+      font-size: 16px;
+      line-height: 16px;
+      white-space: pre-wrap; } }
 
 .table-row {
   width: 100%;
@@ -2650,10 +2682,12 @@ footer .text-info a:hover {
     justify-content: center; }
     .table-row.card-table .card-quantity-icons {
       cursor: pointer;
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-width: 21px;
       max-width: 21px;
-      min-height: 2px; }
+      min-height: 21px; }
       .table-row.card-table .card-quantity-icons img {
         width: 100%;
         min-height: 2px; }
@@ -2822,7 +2856,12 @@ footer .text-info a:hover {
       width: 100%;
       transform: translateX(0); }
     .apartament .apartament-gallery, .apartament .apartament-gallery-item, .apartament .apartament-gallery-dots {
-      max-width: 595px; } }
+      max-width: 595px; }
+  .cards {
+    align-items: stretch; }
+  .card-item {
+    min-height: 388px;
+    height: auto; } }
 
 @media (max-width: 1500px) {
   .catalog-cnt-image {
@@ -2917,9 +2956,6 @@ footer .text-info a:hover {
     left: 0;
     width: 100%;
     z-index: 5; }
-    header.fixed:not(.open) .triggers-case,
-    header.fixed:not(.open) .header-top .logo {
-      display: none; }
     header.fixed:not(.open) .header-top {
       margin-bottom: 0; }
   header.open:not(.fixed) {
@@ -3155,20 +3191,23 @@ footer .text-info a:hover {
     font-size: 14px;
     line-height: 18px; }
   .about {
-    padding-top: 0;
+    padding-top: 0px;
     padding-bottom: 65px; }
   .about .title {
     font-size: 29px;
-    line-height: 43px; }
+    line-height: 43px;
+    text-align: center; }
   .about .subtitle {
     padding-bottom: 35px;
     padding-left: 0;
     font-family: 'Open Sans Light';
-    font-size: 14px; }
+    font-size: 14px;
+    text-align: center; }
   .cards {
     padding-bottom: 25px; }
   .card-item {
-    height: 239px;
+    height: auto;
+    min-height: 239px;
     margin-bottom: 20px;
     padding: 20px 16px; }
   .card-name, .card-price {
@@ -3373,8 +3412,10 @@ footer .text-info a:hover {
   .apartament-info,
   .apartament-text {
     text-align: center; }
-  .triggers-case {
+  header.profile .triggers-case {
     display: none; }
+  header.profile .header-top .triggers-case {
+    display: flex; }
   .compare-section .breadcrumps {
     padding-bottom: 20px; }
   .compare-list-item {
@@ -3437,7 +3478,7 @@ footer .text-info a:hover {
     line-height: 34px; }
   .section-sell-cnt-row {
     margin-bottom: 0; }
-  .cabinet-change-settings .form-row > span {
+  .form-row > span {
     font-size: 16px;
     line-height: 16px; }
   .hotel-img, .section-sell-item-img {
@@ -3450,15 +3491,36 @@ footer .text-info a:hover {
     min-width: 410px;
     max-width: 410px; }
   .compare-list-head {
-    padding-left: 410px; } }
+    padding-left: 410px; }
+  .breadcrumps {
+    display: none; } }
 
 @media (max-width: 767px) {
+  header.fixed:not(.open) {
+    padding: 0;
+    box-shadow: none;
+    background: transparent; }
+  header.fixed:not(.open) .menu-trigger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    padding: 20px;
+    width: 79px;
+    height: 68px;
+    background-color: #000000; }
+  header.fixed:not(.open) .triggers-case,
+  header.fixed:not(.open) .header-top .logo {
+    display: none; }
+  .title {
+    font-size: 44px;
+    line-height: 55px; }
   .form-section-item-comment .form-item {
-    height: 60px; }
+    height: 80px; }
   .error-page {
     height: auto;
     padding: 200px 20px; }
-  .triggers-case {
+  header.profile .triggers-case {
     display: flex; }
   .catalog-cnt-image,
   .header-top .triggers-case {
@@ -3503,8 +3565,6 @@ footer .text-info a:hover {
   .profile-link a {
     font-size: 16px;
     line-height: 16px; }
-  .breadcrumps {
-    display: none; }
   .section-title {
     margin-bottom: 30px; }
   .popup-text-m {
@@ -3623,15 +3683,20 @@ footer .text-info a:hover {
     margin: 0 auto 15px;
     text-align: center; }
   .profile .header-top {
-    margin-bottom: 24px; } }
+    margin-bottom: 24px; }
+  header.profile .header-top .triggers-case {
+    display: none; } }
 
 @media (max-width: 600px) {
-  .cabinet-change-settings .form-row > span {
+  .form-row > span {
     font-size: 12px;
     line-height: 12px;
     white-space: pre-wrap; } }
 
 @media (max-width: 530px) {
+  .title {
+    font-size: 30px !important;
+    line-height: 40px !important; }
   .left-sidebar-link, .sidebar-menu-hidden li .sidebar-menu-hidden-link {
     justify-content: flex-start; }
   .left-sidebar .catalog-country {
@@ -3658,11 +3723,19 @@ footer .text-info a:hover {
     background-color: transparent;
     box-shadow: none;
     border-radius: 0; }
+  .hotel-img,
+  .section-sell-item-img {
+    order: 1;
+    margin-bottom: 30px; }
   .hotel-cnt,
   .section-sell-item-cnt {
     max-width: 100% !important;
     text-align: center;
-    padding: 0 !important; }
+    padding: 0 !important;
+    order: 2; }
+    .hotel-cnt .btn,
+    .section-sell-item-cnt .btn {
+      margin-bottom: 0; }
   .hotel-head,
   .section-sell-item-head {
     flex-direction: column;
@@ -3672,7 +3745,7 @@ footer .text-info a:hover {
     margin-right: 0; }
   .hotel .btn,
   .section-sell-item .btn {
-    margin: 0 auto 30px; }
+    margin: 0 auto; }
   .form-section-item.form-section-item-price > div {
     justify-content: flex-start;
     width: 50%;
@@ -3716,6 +3789,16 @@ footer .text-info a:hover {
 @media (max-height: 590px) {
   .error-page {
     padding: 100px 20px; } }
+
+@media (max-height: 400px) {
+  .popup-text-m, .popup-text-s {
+    margin-bottom: 7px; }
+  .textarea-field {
+    margin-bottom: 10px;
+    height: 50px; }
+  .popup form .btn {
+    max-width: 180px;
+    height: 40px; } }
 
 textarea {
   resize: none; }
