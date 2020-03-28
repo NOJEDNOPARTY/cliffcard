@@ -2017,7 +2017,7 @@ footer .text-info a:hover {
         justify-content: center; }
         @media (min-width: 531px) {
           .form-section-item.form-section-item-price > div {
-            padding: 0 0 0 6px; } }
+            padding: 0 0 0 3px; } }
       .form-section-item.form-section-item-price p {
         font-family: 'Open Sans Regular';
         font-size: 21px;
@@ -3790,9 +3790,9 @@ footer .text-info a:hover {
   .error-page {
     padding: 100px 20px; } }
 
-@media (max-height: 400px) {
+@media (max-height: 420px) {
   .popup-text-m, .popup-text-s {
-    margin-bottom: 7px; }
+    margin-bottom: 10px; }
   .textarea-field {
     margin-bottom: 10px;
     height: 50px; }

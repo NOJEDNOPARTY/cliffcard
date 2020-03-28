@@ -55,39 +55,29 @@ var common = {
 			$(this).closest('.link-trigger').toggleClass('open');
 		})
 
-		$('input.btn:not(.change-pass-info)[type="submit"').click(function(event){
+		$('.btn-submit').click(function(event){
 			event.preventDefault();
 			var formItem = $(this).closest('form').find('.form-item')
-			$( formItem ).each(function( index ) {
-				var item = $(this);
-				if(item.val() == '') {
-					item.addClass('error')
-					setTimeout(function(){
-						item.removeClass('error')
-					}, 4000)
+			// $( formItem ).each(function() {
+			// 	var item = $(this);
+			// 	if(item.val() == '') {
+			// 		item.addClass('error')
+			// 		setTimeout(function(){
+			// 			item.removeClass('error')
+			// 		}, 4000)
+			// 	}
+			// });
+			if($(this).hasClass('.change-pass-info')){
+				if(formItem.val() != '') {
+					$('.popup-wrapper').removeClass('active');
+					$('#changePassInfoPopup').addClass('active')
 				}
-			});
-			if(formItem.val() != '') {
-				$('#thanksPopup').addClass('active')
-			}
-		})
-		$('.change-pass-info').click(function(event){
-			event.preventDefault();
-			var formItem = $(this).closest('form').find('.form-item')
-			$( formItem ).each(function( index ) {
-				var item = $(this);
-				if(item.val() == '') {
-					item.addClass('error')
-					setTimeout(function(){
-						item.removeClass('error')
-					}, 4000)
+			}else {
+				if(formItem.val() != '') {
+					$('#thanksPopup').addClass('active')
 				}
-			});
-			if(formItem.val() != '') {
-				$('.popup-wrapper').removeClass('active');
-				$('#changePassInfoPopup').addClass('active')
 			}
-		})
+		});
 
 		$('.btn-exercise').click(function(event){
 			event.preventDefault();
@@ -189,16 +179,22 @@ var common = {
 				$('body').css({'margin-top':0})
 			}
 		};
-		if($(window).width() < 1201 && $(window).width() > 767) {
-			fixPanel();
-		}else if($(window).width() < 768){
-			fixPanelMob()
-		}
-		$(window).scroll(function() {
+		if($('header').hasClass('.profile') == true) {
 			if($(window).width() < 1201 && $(window).width() > 767) {
 				fixPanel();
 			}else if($(window).width() < 768){
 				fixPanelMob()
+			}
+		}
+
+
+		$(window).scroll(function() {
+			if($('header').hasClass('.profile') == true) {
+				if($(window).width() < 1201 && $(window).width() > 767) {
+					fixPanel();
+				}else if($(window).width() < 768){
+					fixPanelMob()
+				}
 			}
 		});
 	},

@@ -1775,7 +1775,7 @@ footer .text-info a:hover {color: #b71c1c;}
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				@media(min-width: 531px) {padding: 0 0 0 6px;}
+				@media(min-width: 531px) {padding: 0 0 0 3px;}
 			}
 			& p {
 				font-family: 'Open Sans Regular';
@@ -3664,8 +3664,8 @@ footer .text-info a:hover {color: #b71c1c;}
 @media(max-height: 590px)  {
 	.error-page {padding:100px 20px;}
 }
-@media(max-height: 400px)  {
-	.popup-text-m, .popup-text-s {margin-bottom: 7px;}
+@media(max-height: 420px)  {
+	.popup-text-m, .popup-text-s {margin-bottom: 10px;}
 	.textarea-field {
 		margin-bottom: 10px;
 		height: 50px;
