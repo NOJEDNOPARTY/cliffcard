@@ -951,13 +951,15 @@ h2 span {
 }
 .news-head {
   background: rgba(0, 0, 0, 0.5);
+}
+.news-head a {
   font-family: "Open Sans Bold";
   font-size: 32px;
   line-height: 32px;
   color: #ffffff;
   transition: 0.3s ease;
 }
-.news-head:hover {
+.news-head a:hover {
   color: #b71c1c;
 }
 .news-title {
@@ -1006,6 +1008,23 @@ h2 span {
   background-color: #111111;
   height: 100vh;
   box-shadow: 0 0 30px #000000;
+}
+.left-sidebar-header {
+  display: none;
+  padding-bottom: 35px;
+}
+@media (max-width: 1200px) {
+  .left-sidebar-header {
+    display: block;
+  }
+}
+.left-sidebar-header .triggers-case {
+  display: none;
+}
+@media (max-width: 767px) {
+  .left-sidebar-header .triggers-case {
+    display: flex;
+  }
 }
 .left-sidebar .btn {
   margin: 0 auto 145px;
@@ -3053,7 +3072,6 @@ footer .text-info a:hover {
     position: relative;
   }
   header.open {
-    z-index: 8;
     box-shadow: none;
   }
   .section-title-m,
@@ -3425,13 +3443,13 @@ footer .text-info a:hover {
   .triggers-case {
     justify-content: space-between;
   }
-  .profile .header-top {
+  .header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
   }
-  .profile .logo {
+  .header-top .logo {
     margin-bottom: 0px;
   }
   .menu-trigger {
@@ -3479,7 +3497,7 @@ footer .text-info a:hover {
     height: 100vh;
     overflow-y: scroll;
     max-width: 100%;
-    padding: 134px 30px 80px;
+    padding: 35px 30px 80px;
     display: none;
     align-items: flex-start;
     background: #111111;
