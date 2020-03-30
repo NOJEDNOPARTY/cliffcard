@@ -123,6 +123,7 @@ header .wrapper {
 	line-height: 21px;
 	color: #ffffff;
 	transition: 0.3s ease;
+	white-space: nowrap;
 }
 
 .apartament-book-trigger a, .apartament-book-active {
@@ -3386,6 +3387,9 @@ footer .text-info a:hover {color: #b71c1c;}
 	}
 	.compare-list-head {padding-left: 410px;}
 	.breadcrumps {display: none;}
+	
+	.compare-list-item,
+	.compare-list-head {max-width: 730px;}
 }
 @media(max-width: 767px) {
 	header.fixed {

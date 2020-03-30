@@ -9,6 +9,18 @@ body {
 }
 body.open {
   overflow: hidden;
+  position: relative;
+}
+body.open::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
 }
 .wrapper {
   width: 100%;
@@ -114,6 +126,7 @@ header .wrapper {
   line-height: 21px;
   color: #ffffff;
   transition: 0.3s ease;
+  white-space: nowrap;
 }
 .apartament-book-trigger a,
 .apartament-book-active {
@@ -130,6 +143,7 @@ header .wrapper {
 }
 .lang-active img,
 .apartament-book-trigger img {
+  display: inline-block;
   width: 100%;
   max-width: 9px;
   margin-left: 13px;
@@ -952,6 +966,7 @@ h2 span {
 .news-head {
   background: rgba(0, 0, 0, 0.5);
 }
+a.news-head,
 .news-head a {
   font-family: "Open Sans Bold";
   font-size: 32px;
@@ -959,6 +974,7 @@ h2 span {
   color: #ffffff;
   transition: 0.3s ease;
 }
+a.news-head:hover,
 .news-head a:hover {
   color: #b71c1c;
 }
@@ -1351,8 +1367,6 @@ h2 span {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 25px;
-  padding-bottom: 25px;
 }
 .card-name {
   display: inline;
@@ -3783,6 +3797,10 @@ footer .text-info a:hover {
   }
   .breadcrumps {
     display: none;
+  }
+  .compare-list-item,
+  .compare-list-head {
+    max-width: 730px;
   }
 }
 @media (max-width: 767px) {

@@ -381,7 +381,8 @@ header .wrapper {
   font-size: 21px;
   line-height: 21px;
   color: #ffffff;
-  transition: 0.3s ease; }
+  transition: 0.3s ease;
+  white-space: nowrap; }
 
 .apartament-book-trigger a, .apartament-book-active {
   font-size: 18px;
@@ -3520,7 +3521,10 @@ footer .text-info a:hover {
   .compare-list-head {
     padding-left: 410px; }
   .breadcrumps {
-    display: none; } }
+    display: none; }
+  .compare-list-item,
+  .compare-list-head {
+    max-width: 730px; } }
 
 @media (max-width: 767px) {
   header.fixed:not(.open) {
