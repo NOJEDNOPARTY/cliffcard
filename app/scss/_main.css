@@ -1018,12 +1018,22 @@ h2 span {
     display: block;
   }
 }
+@media (max-width: 767px) {
+  .left-sidebar-header {
+    padding-bottom: 35px;
+  }
+}
 .left-sidebar-header .triggers-case {
   display: none;
 }
 @media (max-width: 767px) {
   .left-sidebar-header .triggers-case {
     display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .left-sidebar-header .header-top {
+    margin-bottom: 24px;
   }
 }
 .left-sidebar .btn {
@@ -3324,7 +3334,8 @@ footer .text-info a:hover {
   .form-container {
     padding-left: 0;
   }
-  .form-title {
+  .form-title,
+  .card-forms .title {
     font-size: 29px;
     line-height: 34px;
     margin-bottom: 8px;
@@ -3468,24 +3479,24 @@ footer .text-info a:hover {
     background: #ffffff;
     border-radius: 2px;
   }
-  header.open .menu-trigger span {
+  .menu-trigger.open span {
     position: relative;
     width: 100%;
   }
-  header.open .menu-trigger {
+  .menu-trigger.open {
     justify-content: center;
     width: 24px;
     opacity: 0.25;
     height: 18px;
   }
-  header.open .menu-trigger span:nth-child(1) {
+  .menu-trigger.open span:nth-child(1) {
     transform: rotate(-40deg);
     margin-bottom: -2px;
   }
-  header.open .menu-trigger span:nth-child(2) {
+  .menu-trigger.open span:nth-child(2) {
     display: none;
   }
-  header.open .menu-trigger span:nth-child(3) {
+  .menu-trigger.open span:nth-child(3) {
     transform: rotate(40deg);
   }
   .catalog-country {
@@ -3687,12 +3698,6 @@ footer .text-info a:hover {
     margin: 0 auto 15px;
   }
 }
-@media (max-width: 1025px) {
-  .card-forms .title {
-    font-size: 70px;
-    line-height: 70px;
-  }
-}
 @media (max-width: 992px) {
   .eat-info-marks-block {
     margin-left: 18px;
@@ -3734,6 +3739,9 @@ footer .text-info a:hover {
   }
   .form-title {
     text-align: center;
+  }
+  .card-forms .form-title {
+    text-align: left;
   }
   .form-section .btn {
     margin: 0 auto;
@@ -3859,7 +3867,7 @@ footer .text-info a:hover {
   }
   .left-sidebar {
     height: 100vh;
-    padding: 176px 30px 90px;
+    padding: 35px 30px 90px;
     top: 0;
   }
   .profile-link a {
@@ -4030,7 +4038,7 @@ footer .text-info a:hover {
     display: none;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 730px) {
   .form-row > span {
     font-size: 12px;
     line-height: 12px;
@@ -4136,6 +4144,10 @@ footer .text-info a:hover {
   .section-sell-item {
     overflow: initial;
   }
+  .lang-active img,
+  .apartament-book-trigger img {
+    margin-left: 8px;
+  }
 }
 @media (max-height: 768px) {
   .error-page {
@@ -4144,7 +4156,7 @@ footer .text-info a:hover {
 }
 @media (max-width: 360px) {
   .left-sidebar {
-    padding: 176px 20px 15px;
+    padding: 35px 20px 15px;
   }
   .wrapper {
     padding: 0 20px;

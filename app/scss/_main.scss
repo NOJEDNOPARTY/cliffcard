@@ -6,7 +6,21 @@
 @import "./libs/fancybox/jquery.fancybox.min.css";
 
 body {background: #111111;}
-body.open {overflow: hidden;}
+body.open {
+	overflow: hidden;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #111111;
+	}
+}
 
 .wrapper {
 	width: 100%;
@@ -124,10 +138,11 @@ header .wrapper {
 
 .lang-active img,
 .apartament-book-trigger img{
-	width: 100%;
-	max-width: 9px;
-	margin-left: 13px;
-	transition: 0.3s ease;
+	display: inline-block;
+    width: 100%;
+    max-width: 9px;
+    margin-left: 13px;
+    transition: 0.3s ease;
 }
 
 .lang-select,
@@ -923,16 +938,15 @@ h2 span {
 .news-item img {width:100%;}
 
 
-.news-head {
-	background: rgba(0, 0, 0, 0.5);
-	& a {
-		font-family: 'Open Sans Bold';
-		font-size: 32px;
-		line-height: 32px;
-		color: #ffffff;
-		transition: 0.3s ease;
-		&:hover {color: #b71c1c;}
-	}
+.news-head {background: rgba(0, 0, 0, 0.5);}
+
+a.news-head, .news-head a {
+	font-family: 'Open Sans Bold';
+	font-size: 32px;
+	line-height: 32px;
+	color: #ffffff;
+	transition: 0.3s ease;
+	&:hover {color: #b71c1c;}
 }
 
 .news-title {
@@ -1336,8 +1350,6 @@ h2 span {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	margin-bottom: 25px;
-	padding-bottom: 25px;
 }
 
 .card-name {display: inline;}
@@ -2993,7 +3005,8 @@ footer .text-info a:hover {color: #b71c1c;}
 		line-height: 18px;
 	}
 	.form-container {padding-left: 0;}
-	.form-title {
+	.form-title,
+	.card-forms .title {
 		font-size: 29px;
 		line-height: 34px;
 		margin-bottom: 8px;
@@ -3320,12 +3333,6 @@ footer .text-info a:hover {color: #b71c1c;}
 		margin: 0 auto 15px;
 	}
 }
-@media(max-width: 1025px) {
-	.card-forms .title {
-		font-size: 70px;
-		line-height: 70px;
-	}
-}
 @media(max-width: 992px) {
 	.eat-info-marks-block {margin-left: 18px;}
 	.section-texts .btn {margin: 0 auto;}
@@ -3354,6 +3361,7 @@ footer .text-info a:hover {color: #b71c1c;}
 		text-align: center;
 	}
 	.form-title {text-align: center;}
+	.card-forms .form-title {text-align: left;}
 	.form-section .btn {margin: 0 auto;}
 	.section-title {
 		font-size: 36px;
@@ -3582,7 +3590,7 @@ footer .text-info a:hover {color: #b71c1c;}
 	.profile .header-top  {margin-bottom: 24px;}
 	header.profile .header-top .triggers-case {display: none;}
 }
-@media(max-width: 600px) {
+@media(max-width: 730px) {
 	.form-row > span {
 		font-size: 12px;
 		line-height: 12px;
